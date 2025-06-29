@@ -9,7 +9,8 @@ export const RoadmapHeader = () => {
   const location = useLocation();
 
   const roadmapItems = [
-    { path: '/roadmaps', label: 'Career Roadmaps' },
+    { path: '/roadmaps', label: 'All Career Roadmaps' },
+    { path: '/roadmaps/beginner', label: 'Beginner Roadmap' },
     { path: '/learning-paths', label: 'Learning Paths' },
     { path: '/best-practices', label: 'Best Practices' },
     { path: '/labs', label: 'Hands-on Labs' },
@@ -73,7 +74,7 @@ export const RoadmapHeader = () => {
                     
                     {/* Dropdown Menu */}
                     {isRoadmapDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border z-50">
+                      <div className="absolute top-full left-0 mt-1 w-52 bg-white rounded-md shadow-lg border z-50">
                         <div className="py-1">
                           {roadmapItems.map((dropdownItem) => (
                             <Link
