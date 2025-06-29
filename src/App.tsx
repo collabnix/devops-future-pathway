@@ -22,6 +22,7 @@ import Glossary from "./pages/Glossary";
 import InterviewPrep from "./pages/InterviewPrep";
 import Labs from "./pages/Labs";
 import SalaryGuide from "./pages/SalaryGuide";
+import BeginnerRoadmap from "./pages/BeginnerRoadmap";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           {/* Core Learning Routes */}
           <Route path="/roadmaps" element={<Roadmaps />} />
+          <Route path="/roadmaps/beginner" element={<BeginnerRoadmap />} />
           <Route path="/learning-paths" element={<LearningPaths />} />
           <Route path="/best-practices" element={<BestPractices />} />
           <Route path="/labs" element={<Labs />} />
