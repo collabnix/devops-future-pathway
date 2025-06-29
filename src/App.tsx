@@ -13,6 +13,15 @@ import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+// Import all the missing roadmap and learning pages
+import Roadmaps from "./pages/Roadmaps";
+import LearningPaths from "./pages/LearningPaths";
+import BestPractices from "./pages/BestPractices";
+import Events from "./pages/Events";
+import Glossary from "./pages/Glossary";
+import InterviewPrep from "./pages/InterviewPrep";
+import Labs from "./pages/Labs";
+import SalaryGuide from "./pages/SalaryGuide";
 
 const queryClient = new QueryClient();
 
@@ -27,14 +36,32 @@ const App = () => (
       <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* Core Learning Routes */}
+          <Route path="/roadmaps" element={<Roadmaps />} />
+          <Route path="/learning-paths" element={<LearningPaths />} />
+          <Route path="/best-practices" element={<BestPractices />} />
+          <Route path="/labs" element={<Labs />} />
+          
+          {/* Resource Routes */}
           <Route path="/resources" element={<Resources />} />
           <Route path="/tools" element={<Tools />} />
+          <Route path="/glossary" element={<Glossary />} />
+          
+          {/* Career Routes */}
           <Route path="/careers" element={<Careers />} />
           <Route path="/certifications" element={<Certifications />} />
+          <Route path="/salary-guide" element={<SalaryGuide />} />
+          <Route path="/interview-prep" element={<InterviewPrep />} />
+          
+          {/* Community Routes */}
           <Route path="/community" element={<Community />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/blog" element={<Blog />} />
+          
+          {/* Information Routes */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
