@@ -3,6 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
+import { RoadmapHeader } from "../components/RoadmapHeader";
+import { Footer } from "../components/Footer";
 import { 
   MapPin, 
   Route, 
@@ -20,8 +22,10 @@ import {
   BookOpen,
   Star,
   TrendingUp,
-  Zap
+  Zap,
+  GraduationCap
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Roadmaps = () => {
   const roadmaps = [
@@ -248,6 +252,8 @@ const Roadmaps = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <RoadmapHeader />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -264,9 +270,11 @@ const Roadmaps = () => {
               Visual roadmaps to guide your DevOps career journey with structured learning paths
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100">
-                <MapPin className="h-5 w-5 mr-2" />
-                Explore Roadmaps
+              <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100" asChild>
+                <Link to="/roadmaps/beginner">
+                  <GraduationCap className="h-5 w-5 mr-2" />
+                  Start with Beginner Path
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Target className="h-5 w-5 mr-2" />
@@ -281,7 +289,7 @@ const Roadmaps = () => {
         {/* Overview Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-            <div className="text-3xl font-bold text-indigo-600 mb-2">3</div>
+            <div className="text-3xl font-bold text-indigo-600 mb-2">4</div>
             <div className="text-gray-600">Specialized Roadmaps</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">
@@ -297,6 +305,47 @@ const Roadmaps = () => {
             <div className="text-gray-600">Progress Tracking</div>
           </div>
         </div>
+
+        {/* Beginner Roadmap CTA */}
+        <Card className="mb-12 bg-gradient-to-r from-emerald-50 to-blue-50 border-emerald-200">
+          <CardHeader>
+            <div className="flex items-center gap-4">
+              <div className="bg-emerald-500 text-white p-3 rounded-lg">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl text-emerald-800">New to DevOps?</CardTitle>
+                <CardDescription className="text-emerald-700">
+                  Start with our step-by-step beginner roadmap designed for complete newcomers
+                </CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+              <div className="flex items-center gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-600">6</div>
+                  <div className="text-sm text-gray-600">Phases</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-600">10-12</div>
+                  <div className="text-sm text-gray-600">Weeks</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-600">Beginner</div>
+                  <div className="text-sm text-gray-600">Level</div>
+                </div>
+              </div>
+              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700" asChild>
+                <Link to="/roadmaps/beginner">
+                  Start Beginner Roadmap
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Roadmap Selection */}
         <Tabs defaultValue="devops-engineer" className="w-full">
@@ -486,29 +535,37 @@ const Roadmaps = () => {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center p-6 bg-blue-50 rounded-lg">
-                <BookOpen className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Learning Resources</h3>
-                <p className="text-sm text-gray-600">Curated books, courses, and tutorials</p>
-              </div>
+              <Link to="/resources" className="group">
+                <div className="text-center p-6 bg-blue-50 rounded-lg hover:shadow-lg transition-shadow">
+                  <BookOpen className="h-8 w-8 text-blue-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold mb-2">Learning Resources</h3>
+                  <p className="text-sm text-gray-600">Curated books, courses, and tutorials</p>
+                </div>
+              </Link>
               
-              <div className="text-center p-6 bg-green-50 rounded-lg">
-                <Users className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Community Support</h3>
-                <p className="text-sm text-gray-600">Connect with fellow learners</p>
-              </div>
+              <Link to="/community" className="group">
+                <div className="text-center p-6 bg-green-50 rounded-lg hover:shadow-lg transition-shadow">
+                  <Users className="h-8 w-8 text-green-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold mb-2">Community Support</h3>
+                  <p className="text-sm text-gray-600">Connect with fellow learners</p>
+                </div>
+              </Link>
               
-              <div className="text-center p-6 bg-purple-50 rounded-lg">
-                <Target className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Practice Labs</h3>
-                <p className="text-sm text-gray-600">Hands-on projects and exercises</p>
-              </div>
+              <Link to="/labs" className="group">
+                <div className="text-center p-6 bg-purple-50 rounded-lg hover:shadow-lg transition-shadow">
+                  <Target className="h-8 w-8 text-purple-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold mb-2">Practice Labs</h3>
+                  <p className="text-sm text-gray-600">Hands-on projects and exercises</p>
+                </div>
+              </Link>
               
-              <div className="text-center p-6 bg-orange-50 rounded-lg">
-                <Star className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Mentorship</h3>
-                <p className="text-sm text-gray-600">Get guidance from experts</p>
-              </div>
+              <Link to="/certifications" className="group">
+                <div className="text-center p-6 bg-orange-50 rounded-lg hover:shadow-lg transition-shadow">
+                  <Star className="h-8 w-8 text-orange-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold mb-2">Certifications</h3>
+                  <p className="text-sm text-gray-600">Study plans & guides</p>
+                </div>
+              </Link>
             </div>
           </CardContent>
         </Card>
@@ -520,17 +577,23 @@ const Roadmaps = () => {
             Choose your roadmap and begin building the skills that will advance your career
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100">
-              <Route className="h-5 w-5 mr-2" />
-              Get Started Now
+            <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100" asChild>
+              <Link to="/roadmaps/beginner">
+                <Route className="h-5 w-5 mr-2" />
+                Start with Beginner Path
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              <Users className="h-5 w-5 mr-2" />
-              Join Community
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Link to="/community">
+                <Users className="h-5 w-5 mr-2" />
+                Join Community
+              </Link>
             </Button>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
