@@ -15,6 +15,7 @@ export const RoadmapHeader = () => {
     { path: '/certifications', label: 'Certifications' },
     { path: '/community', label: 'Community' },
     { path: '/blog', label: 'Blog' },
+    { path: '/about', label: 'About' },
   ];
 
   const isActive = (path) => location.pathname === path;
