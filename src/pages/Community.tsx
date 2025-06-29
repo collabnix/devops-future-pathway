@@ -1,5 +1,6 @@
 import React from 'react';
 import { RoadmapHeader } from '../components/RoadmapHeader';
+import { Footer } from '../components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -486,6 +487,7 @@ const Community = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
