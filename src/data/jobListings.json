@@ -1,0 +1,20 @@
+{
+  "jobs": [
+    {
+      "id": "sample-1",
+      "title": "DevOps Engineer",
+      "company": "Sample Company",
+      "location": "Remote",
+      "type": "Full-time",
+      "experience": "2-5 years",
+      "salary": "$70k - $130k",
+      "description": "We are looking for a skilled DevOps Engineer to join our team...",
+      "skills": ["Docker", "Kubernetes", "AWS", "CI/CD", "Terraform"],
+      "url": "https://example.com/job/1",
+      "posted": "2025-06-29T10:00:00Z",
+      "source": "sample"
+    }
+  ],
+  "lastUpdated": "2025-06-29T12:00:00Z",
+  "totalJobs": 1
+}
