@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { RoadmapHeader } from '../components/RoadmapHeader';
 import { Footer } from '../components/Footer';
+import JobListing from '../components/JobListing';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -15,10 +16,35 @@ import {
   Briefcase,
   Clock,
   MapPin,
-  Star
+  Star,
+  RefreshCw,
+  AlertCircle
 } from 'lucide-react';
 
+// Import job listings data
+import jobListingsData from '../data/jobListings.json';
+
 const Careers = () => {
+  const [jobListings, setJobListings] = useState(jobListingsData);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Function to reload job listings (in case the data gets updated)
+  const refreshJobListings = async () => {
+    setLoading(true);
+    try {
+      // In a real app, this would make an API call
+      // For now, we'll just reload the imported data
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setJobListings(jobListingsData);
+      setError(null);
+    } catch (err) {
+      setError('Failed to load job listings');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const careerPaths = [
     {
       title: "DevOps Engineer",
@@ -217,6 +243,83 @@ const Careers = () => {
             Explore different career opportunities in DevOps, understand salary expectations, 
             and learn what skills you need to advance your career.
           </p>
+        </div>
+
+        {/* Current Job Openings Section */}
+        <div className="mb-12">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">Current Job Openings</h2>
+            <div className="flex items-center space-x-4">
+              <span className="text-sm text-gray-500">
+                Last updated: {new Date(jobListings.lastUpdated).toLocaleDateString()}
+              </span>
+              <Button 
+                onClick={refreshJobListings} 
+                disabled={loading}
+                variant="outline"
+                size="sm"
+              >
+                <RefreshCw className={`w-4 h-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
+                Refresh
+              </Button>
+            </div>
+          </div>
+          
+          {error && (
+            <Card className="mb-6 border-red-200 bg-red-50">
+              <CardContent className="pt-6">
+                <div className="flex items-center text-red-600">
+                  <AlertCircle className="w-5 h-5 mr-2" />
+                  <span>{error}</span>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {loading ? (
+            <div className="text-center py-8">
+              <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-500" />
+              <p className="text-gray-600">Loading job listings...</p>
+            </div>
+          ) : jobListings.jobs && jobListings.jobs.length > 0 ? (
+            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+              {jobListings.jobs.map((job, index) => (
+                <JobListing key={job.id || index} job={job} />
+              ))}
+            </div>
+          ) : (
+            <Card className="text-center py-8">
+              <CardContent>
+                <Briefcase className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">No job listings available</h3>
+                <p className="text-gray-600 mb-4">Check back later for new opportunities</p>
+                <Button onClick={refreshJobListings} variant="outline">
+                  <RefreshCw className="w-4 h-4 mr-2" />
+                  Try Again
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+
+          <div className="text-center">
+            <p className="text-sm text-gray-600 mb-4">
+              Job listings are automatically updated every 6 hours from multiple sources including kube.careers
+            </p>
+            <div className="flex justify-center space-x-4">
+              <Button asChild variant="outline">
+                <a href="https://kube.careers" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  View More Jobs
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <a href="https://www.linkedin.com/jobs/search/?keywords=devops" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  LinkedIn Jobs
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
 
         {/* Industry Insights */}
