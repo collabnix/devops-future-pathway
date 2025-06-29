@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     views: "6.3k",
     comments: "33",
     trending: false,
-    url: "https://aquasecurity.github.io/trivy/"
+    url: "https://aquasecurity.github.io/trivy/latest/"
   },
   {
     title: "Helm Charts: Package Management for Kubernetes",
