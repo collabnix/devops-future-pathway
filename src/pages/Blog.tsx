@@ -19,159 +19,21 @@ import {
   MessageSquare,
   Filter
 } from 'lucide-react';
+import { blogPosts, featuredPost, categories, BlogPost } from '../data/blogData';
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = [
-    'All', 'Getting Started', 'Containers', 'Kubernetes', 'Cloud', 'CI/CD', 
-    'Monitoring', 'Security', 'Best Practices', 'Career'
-  ];
-
-  const featuredPost = {
-    title: "The Complete DevOps Beginner's Guide 2025",
-    excerpt: "Everything you need to know to start your DevOps journey, from basic concepts to advanced practices. Learn the fundamentals that will set you up for success.",
-    author: "Ajeet Singh Raina",
-    date: "2025-01-15",
-    readTime: "12 min read",
-    category: "Getting Started",
-    image: "🚀",
-    views: "15.2k",
-    comments: "89",
-    featured: true,
-    url: "https://collabnix.com/devops-beginners-guide-2025/"
-  };
-
-  const blogPosts = [
-    {
-      title: "Docker Best Practices for Production Deployments",
-      excerpt: "Learn essential Docker practices for secure, efficient, and scalable production deployments.",
-      author: "Sarah Chen",
-      date: "2025-01-10",
-      readTime: "8 min read",
-      category: "Containers",
-      image: "🐳",
-      views: "8.4k",
-      comments: "42",
-      trending: true,
-      url: "https://collabnix.com/docker-production-best-practices/"
-    },
-    {
-      title: "Kubernetes Security: A Comprehensive Guide",
-      excerpt: "Secure your Kubernetes clusters with these essential security practices and tools.",
-      author: "Mike Rodriguez",
-      date: "2025-01-08",
-      readTime: "15 min read",
-      category: "Security",
-      image: "🔒",
-      views: "12.1k",
-      comments: "67",
-      trending: false,
-      url: "https://collabnix.com/kubernetes-security-guide/"
-    },
-    {
-      title: "Building Efficient CI/CD Pipelines with GitHub Actions",
-      excerpt: "Step-by-step guide to creating robust CI/CD pipelines using GitHub Actions.",
-      author: "Jennifer Kim",
-      date: "2025-01-05",
-      readTime: "10 min read",
-      category: "CI/CD",
-      image: "⚡",
-      views: "9.7k",
-      comments: "31",
-      trending: true,
-      url: "https://collabnix.com/github-actions-cicd-guide/"
-    },
-    {
-      title: "Monitoring Microservices: Tools and Best Practices",
-      excerpt: "Essential monitoring strategies for microservices architectures using modern tools.",
-      author: "David Park",
-      date: "2025-01-03",
-      readTime: "12 min read",
-      category: "Monitoring",
-      image: "📊",
-      views: "6.8k",
-      comments: "28",
-      trending: false,
-      url: "https://collabnix.com/microservices-monitoring-guide/"
-    },
-    {
-      title: "Infrastructure as Code with Terraform: Advanced Patterns",
-      excerpt: "Advanced Terraform patterns and best practices for managing complex infrastructure.",
-      author: "Lisa Wang",
-      date: "2024-12-30",
-      readTime: "14 min read",
-      category: "Cloud",
-      image: "🏗️",
-      views: "7.2k",
-      comments: "39",
-      trending: false,
-      url: "https://collabnix.com/terraform-advanced-patterns/"
-    },
-    {
-      title: "DevOps Career Transition: From Developer to DevOps Engineer",
-      excerpt: "A practical roadmap for developers looking to transition into DevOps roles.",
-      author: "Alex Thompson",
-      date: "2024-12-28",
-      readTime: "9 min read",
-      category: "Career",
-      image: "🎯",
-      views: "11.3k",
-      comments: "85",
-      trending: false,
-      url: "https://collabnix.com/devops-career-transition/"
-    },
-    {
-      title: "Kubernetes Troubleshooting: Common Issues and Solutions",
-      excerpt: "Debug and resolve common Kubernetes problems with practical troubleshooting techniques.",
-      author: "Robert Lee",
-      date: "2024-12-25",
-      readTime: "11 min read",
-      category: "Kubernetes",
-      image: "🔧",
-      views: "9.1k",
-      comments: "52",
-      trending: false,
-      url: "https://collabnix.com/kubernetes-troubleshooting-guide/"
-    },
-    {
-      title: "GitOps: Implementing Continuous Deployment with ArgoCD",
-      excerpt: "Learn how to implement GitOps workflows using ArgoCD for continuous deployment.",
-      author: "Maria Garcia",
-      date: "2024-12-22",
-      readTime: "13 min read",
-      category: "CI/CD",
-      image: "🔄",
-      views: "5.9k",
-      comments: "24",
-      trending: false,
-      url: "https://collabnix.com/gitops-argocd-guide/"
-    },
-    {
-      title: "Cloud Cost Optimization: Strategies for AWS, Azure, and GCP",
-      excerpt: "Practical strategies to optimize cloud costs across major cloud platforms.",
-      author: "James Wilson",
-      date: "2024-12-20",
-      readTime: "16 min read",
-      category: "Cloud",
-      image: "💰",
-      views: "8.7k",
-      comments: "41",
-      trending: false,
-      url: "https://collabnix.com/cloud-cost-optimization/"
-    }
-  ];
-
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.category.toLowerCase().includes(searchTerm.toLowerCase());
+                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          post.category.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
@@ -180,7 +42,7 @@ const Blog = () => {
     });
   };
 
-  const getCategoryColor = (category) => {
+  const getCategoryColor = (category: string) => {
     const colors = {
       'Getting Started': 'bg-green-100 text-green-800',
       'Containers': 'bg-blue-100 text-blue-800',
@@ -190,9 +52,11 @@ const Blog = () => {
       'Monitoring': 'bg-red-100 text-red-800',
       'Security': 'bg-indigo-100 text-indigo-800',
       'Best Practices': 'bg-gray-100 text-gray-800',
-      'Career': 'bg-pink-100 text-pink-800'
+      'Career': 'bg-pink-100 text-pink-800',
+      'Infrastructure': 'bg-teal-100 text-teal-800',
+      'Automation': 'bg-cyan-100 text-cyan-800'
     };
-    return colors[category] || 'bg-gray-100 text-gray-800';
+    return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
   };
 
   return (
@@ -212,7 +76,7 @@ const Blog = () => {
           <Card className="text-center">
             <CardContent className="pt-6">
               <BookOpen className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-              <div className="text-2xl font-bold text-blue-600 mb-1">250+</div>
+              <div className="text-2xl font-bold text-blue-600 mb-1">{blogPosts.length}+</div>
               <h3 className="font-semibold text-gray-900">Articles</h3>
             </CardContent>
           </Card>
