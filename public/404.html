@@ -5,19 +5,36 @@
   <title>DevOps Future Pathway</title>
   <script type="text/javascript">
     // Single Page Apps for GitHub Pages
+    // MIT License
     // https://github.com/rafgraph/spa-github-pages
-    var pathSegmentsToKeep = 1;
+    // This script checks to see if a redirect is present in the query string,
+    // converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...)
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    
+    var segmentCount = 1;
 
     var l = window.location;
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash
     );
   </script>
 </head>
 <body>
+  <!-- This is the content that will be displayed to users visiting this page directly -->
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+      <h1>404 - Page Not Found</h1>
+      <p>This page requires JavaScript to work properly.</p>
+      <p><a href="/devops-future-pathway/">Return to Home</a></p>
+    </div>
+  </noscript>
 </body>
 </html>
