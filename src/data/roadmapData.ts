@@ -1,4 +1,3 @@
-
 import { 
   Server, 
   GitBranch, 
@@ -239,6 +238,40 @@ export const roadmapData = [
             url: 'https://www.oreilly.com/library/view/jenkins-the-definitive/9781449311155/'
           }
         ]
+      },
+      {
+        id: 'gitlab-ci',
+        name: 'GitLab CI/CD',
+        description: 'Integrated CI/CD platform with GitLab',
+        difficulty: 'Intermediate',
+        icon: GitBranch,
+        keyPoints: [
+          'GitLab CI/CD pipeline configuration with .gitlab-ci.yml',
+          'Runners and executor types (Docker, Shell, Kubernetes)',
+          'Pipeline stages, jobs, and dependencies',
+          'Variables and secrets management',
+          'Merge request pipelines and deployment pipelines',
+          'Auto DevOps and predefined templates',
+          'Container registry integration',
+          'GitLab Pages for static site deployment'
+        ],
+        resources: [
+          {
+            title: 'GitLab CI/CD Documentation',
+            type: 'article',
+            url: 'https://docs.gitlab.com/ee/ci/'
+          },
+          {
+            title: 'GitLab CI/CD Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=1iXFbchozdY'
+          },
+          {
+            title: 'GitLab CI/CD Best Practices',
+            type: 'article',
+            url: 'https://docs.gitlab.com/ee/ci/pipelines/pipeline_efficiency.html'
+          }
+        ]
       }
     ]
   },
@@ -325,6 +358,40 @@ export const roadmapData = [
             url: 'https://www.cncf.io/certification/cka/'
           }
         ]
+      },
+      {
+        id: 'podman',
+        name: 'Podman',
+        description: 'Daemonless container engine as Docker alternative',
+        difficulty: 'Intermediate',
+        icon: Container,
+        keyPoints: [
+          'Podman architecture and rootless containers',
+          'Pod creation and management',
+          'Podman Compose for multi-container applications',
+          'Container image building with Buildah',
+          'Systemd integration for container services',
+          'Security advantages over Docker',
+          'Migration from Docker to Podman',
+          'Kubernetes YAML generation'
+        ],
+        resources: [
+          {
+            title: 'Podman Official Documentation',
+            type: 'article',
+            url: 'https://docs.podman.io/en/latest/'
+          },
+          {
+            title: 'Podman Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=Za36qHbrf3g'
+          },
+          {
+            title: 'Podman vs Docker Comparison',
+            type: 'article',
+            url: 'https://www.redhat.com/en/topics/containers/what-is-podman'
+          }
+        ]
       }
     ]
   },
@@ -375,6 +442,88 @@ export const roadmapData = [
         ]
       },
       {
+        id: 'azure',
+        name: 'Microsoft Azure',
+        description: 'Microsoft cloud platform with enterprise integration',
+        difficulty: 'Intermediate',
+        icon: Cloud,
+        keyPoints: [
+          'Azure Resource Manager (ARM) and resource groups',
+          'Virtual Machines and App Services',
+          'Azure Active Directory and identity management',
+          'Virtual Networks and network security groups',
+          'Azure Storage accounts and blob storage',
+          'Azure DevOps and CI/CD pipelines',
+          'Azure Monitor and Application Insights',
+          'Azure Functions serverless computing',
+          'Azure Kubernetes Service (AKS)',
+          'Cosmos DB and SQL Database'
+        ],
+        resources: [
+          {
+            title: 'Azure Fundamentals',
+            type: 'course',
+            url: 'https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/'
+          },
+          {
+            title: 'Azure Architecture Center',
+            type: 'article',
+            url: 'https://docs.microsoft.com/en-us/azure/architecture/'
+          },
+          {
+            title: 'Azure DevOps Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=4BibQ69MD8c'
+          },
+          {
+            title: 'Learn Azure in a Month of Lunches',
+            type: 'book',
+            url: 'https://www.manning.com/books/learn-azure-in-a-month-of-lunches'
+          }
+        ]
+      },
+      {
+        id: 'gcp',
+        name: 'Google Cloud Platform',
+        description: 'Google cloud services with strong data and AI capabilities',
+        difficulty: 'Intermediate',
+        icon: Cloud,
+        keyPoints: [
+          'Compute Engine and App Engine services',
+          'Google Kubernetes Engine (GKE)',
+          'Cloud Storage and BigQuery',
+          'Identity and Access Management (IAM)',
+          'Virtual Private Cloud (VPC) networking',
+          'Cloud Build CI/CD and Cloud Deploy',
+          'Cloud Monitoring and Cloud Logging',
+          'Cloud Functions serverless platform',
+          'Firebase for mobile and web apps',
+          'AI/ML services (Vertex AI, AutoML)'
+        ],
+        resources: [
+          {
+            title: 'Google Cloud Documentation',
+            type: 'article',
+            url: 'https://cloud.google.com/docs'
+          },
+          {
+            title: 'Google Cloud Associate Cloud Engineer',
+            type: 'course',
+            url: 'https://cloud.google.com/certification/cloud-engineer'
+          },
+          {
+            title: 'GCP Tutorial for Beginners',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=kzKFuHk8ovk'
+          },
+          {
+            title: 'Google Cloud Platform in Action',
+            type: 'book',
+            url: 'https://www.manning.com/books/google-cloud-platform-in-action'
+          }
+        ]
+      },
+      {
         id: 'terraform',
         name: 'Terraform',
         description: 'Infrastructure as Code tool for cloud resources',
@@ -411,6 +560,40 @@ export const roadmapData = [
             title: 'Terraform Tutorial',
             type: 'video',
             url: 'https://www.youtube.com/watch?v=SLB_c_ayRMo'
+          }
+        ]
+      },
+      {
+        id: 'pulumi',
+        name: 'Pulumi',
+        description: 'Modern Infrastructure as Code using programming languages',
+        difficulty: 'Intermediate',
+        icon: Code,
+        keyPoints: [
+          'Infrastructure as Code with TypeScript, Python, Go, C#',
+          'Cloud-native programming model',
+          'Stack and project organization',
+          'Component resources and abstractions',
+          'Policy as Code with CrossGuard',
+          'Multi-cloud and hybrid deployments',
+          'GitOps workflows with Pulumi Deployments',
+          'Secrets management and configuration'
+        ],
+        resources: [
+          {
+            title: 'Pulumi Documentation',
+            type: 'article',
+            url: 'https://www.pulumi.com/docs/'
+          },
+          {
+            title: 'Pulumi Tutorial Series',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=vIjeiDcsR3Q'
+          },
+          {
+            title: 'Modern Infrastructure as Code',
+            type: 'book',
+            url: 'https://www.pulumi.com/resources/modern-infrastructure-as-code/'
           }
         ]
       }
@@ -497,7 +680,75 @@ export const roadmapData = [
           {
             title: 'Elastic Certified Engineer',
             type: 'course',
-            url: 'https://www.elastic.co/training/certification'
+            url: 'https://www.elastic.co/certification/certification'
+          }
+        ]
+      },
+      {
+        id: 'datadog',
+        name: 'Datadog',
+        description: 'Cloud-scale monitoring and analytics platform',
+        difficulty: 'Intermediate',
+        icon: Monitor,
+        keyPoints: [
+          'Infrastructure monitoring and host maps',
+          'Application Performance Monitoring (APM)',
+          'Log management and analysis',
+          'Custom metrics and dashboards',
+          'Alerting and notification integrations',
+          'Synthetic monitoring and RUM',
+          'Security monitoring and compliance',
+          'Cost optimization and resource tracking'
+        ],
+        resources: [
+          {
+            title: 'Datadog Documentation',
+            type: 'article',
+            url: 'https://docs.datadoghq.com/'
+          },
+          {
+            title: 'Datadog Learning Center',
+            type: 'course',
+            url: 'https://learn.datadoghq.com/'
+          },
+          {
+            title: 'Datadog Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=1Xgx-NbOPBw'
+          }
+        ]
+      },
+      {
+        id: 'newrelic',
+        name: 'New Relic',
+        description: 'Full-stack observability platform',
+        difficulty: 'Intermediate',
+        icon: Activity,
+        keyPoints: [
+          'Application Performance Monitoring',
+          'Infrastructure monitoring and alerting',
+          'Browser and mobile monitoring',
+          'Distributed tracing and error tracking',
+          'Custom dashboards and queries (NRQL)',
+          'Alerts and incident management',
+          'Kubernetes and container monitoring',
+          'AI-powered insights and anomaly detection'
+        ],
+        resources: [
+          {
+            title: 'New Relic Documentation',
+            type: 'article',
+            url: 'https://docs.newrelic.com/'
+          },
+          {
+            title: 'New Relic University',
+            type: 'course',
+            url: 'https://learn.newrelic.com/'
+          },
+          {
+            title: 'New Relic Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=aU9-8Cnulr4'
           }
         ]
       }
@@ -585,6 +836,351 @@ export const roadmapData = [
             title: 'Vault: Securing, Storing, and Tightly Controlling Access',
             type: 'book',
             url: 'https://www.oreilly.com/library/view/vault-securing-storing/9781492043959/'
+          }
+        ]
+      },
+      {
+        id: 'trivy',
+        name: 'Trivy Security Scanner',
+        description: 'Comprehensive security scanner for containers and infrastructure',
+        difficulty: 'Intermediate',
+        icon: Shield,
+        keyPoints: [
+          'Container image vulnerability scanning',
+          'Filesystem and Git repository scanning',
+          'Kubernetes cluster security assessment',
+          'Infrastructure as Code security scanning',
+          'License detection and compliance',
+          'SBOM (Software Bill of Materials) generation',
+          'CI/CD integration and automation',
+          'Custom policy creation with Rego'
+        ],
+        resources: [
+          {
+            title: 'Trivy Documentation',
+            type: 'article',
+            url: 'https://aquasecurity.github.io/trivy/'
+          },
+          {
+            title: 'Trivy Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=bgYrhQ6hPw4'
+          },
+          {
+            title: 'Container Security with Trivy',
+            type: 'article',
+            url: 'https://blog.aquasec.com/trivy-vulnerability-scanner'
+          }
+        ]
+      },
+      {
+        id: 'falco',
+        name: 'Falco Runtime Security',
+        description: 'Runtime security monitoring for cloud-native applications',
+        difficulty: 'Advanced',
+        icon: Shield,
+        keyPoints: [
+          'Runtime threat detection for containers',
+          'Kubernetes audit log monitoring',
+          'Custom security rule creation',
+          'Real-time alerting and notifications',
+          'Integration with SIEM and monitoring tools',
+          'Behavioral analysis and anomaly detection',
+          'Cloud provider security event monitoring',
+          'Compliance monitoring automation'
+        ],
+        resources: [
+          {
+            title: 'Falco Documentation',
+            type: 'article',
+            url: 'https://falco.org/docs/'
+          },
+          {
+            title: 'Falco Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=VEFaGjfjfyc'
+          },
+          {
+            title: 'Runtime Security with Falco',
+            type: 'article',
+            url: 'https://sysdig.com/learn-cloud-native/falco-runtime-security/'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'databases',
+    title: 'Database Management',
+    description: 'Manage and optimize databases in production environments.',
+    skills: [
+      {
+        id: 'mysql-postgresql',
+        name: 'MySQL & PostgreSQL',
+        description: 'Relational database management and optimization',
+        difficulty: 'Intermediate',
+        icon: Database,
+        keyPoints: [
+          'Database installation and configuration',
+          'Query optimization and indexing strategies',
+          'Backup and recovery procedures',
+          'Replication and high availability setup',
+          'Performance monitoring and tuning',
+          'User management and security',
+          'Database migrations and schema changes',
+          'Monitoring tools and alerting'
+        ],
+        resources: [
+          {
+            title: 'MySQL Official Documentation',
+            type: 'article',
+            url: 'https://dev.mysql.com/doc/'
+          },
+          {
+            title: 'PostgreSQL Tutorial',
+            type: 'course',
+            url: 'https://www.postgresqltutorial.com/'
+          },
+          {
+            title: 'Database Performance Tuning',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=HubezKbFL7E'
+          },
+          {
+            title: 'High Performance MySQL',
+            type: 'book',
+            url: 'https://www.oreilly.com/library/view/high-performance-mysql/9781492080503/'
+          }
+        ]
+      },
+      {
+        id: 'mongodb',
+        name: 'MongoDB',
+        description: 'NoSQL document database management',
+        difficulty: 'Intermediate',
+        icon: Database,
+        keyPoints: [
+          'Document-oriented data modeling',
+          'Aggregation pipelines and queries',
+          'Replica sets and sharding',
+          'Performance optimization and indexing',
+          'Backup strategies and point-in-time recovery',
+          'Security and authentication setup',
+          'MongoDB Atlas cloud deployment',
+          'Monitoring with MongoDB Compass and ops tools'
+        ],
+        resources: [
+          {
+            title: 'MongoDB Official Documentation',
+            type: 'article',
+            url: 'https://docs.mongodb.com/'
+          },
+          {
+            title: 'MongoDB University',
+            type: 'course',
+            url: 'https://university.mongodb.com/'
+          },
+          {
+            title: 'MongoDB Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=c2M-rlkkT5o'
+          },
+          {
+            title: 'MongoDB: The Definitive Guide',
+            type: 'book',
+            url: 'https://www.oreilly.com/library/view/mongodb-the-definitive/9781491954454/'
+          }
+        ]
+      },
+      {
+        id: 'redis',
+        name: 'Redis',
+        description: 'In-memory data structure store for caching and messaging',
+        difficulty: 'Intermediate',
+        icon: Database,
+        keyPoints: [
+          'Data types and operations (strings, sets, hashes, lists)',
+          'Caching strategies and TTL management',
+          'Pub/Sub messaging patterns',
+          'Redis Cluster and high availability',
+          'Persistence options (RDB, AOF)',
+          'Memory optimization and eviction policies',
+          'Redis Sentinel for monitoring',
+          'Integration patterns with applications'
+        ],
+        resources: [
+          {
+            title: 'Redis Official Documentation',
+            type: 'article',
+            url: 'https://redis.io/documentation'
+          },
+          {
+            title: 'Redis University',
+            type: 'course',
+            url: 'https://university.redis.com/'
+          },
+          {
+            title: 'Redis Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=jgpVdJB2sKQ'
+          },
+          {
+            title: 'Redis in Action',
+            type: 'book',
+            url: 'https://www.manning.com/books/redis-in-action'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'advanced-topics',
+    title: 'Advanced DevOps Topics',
+    description: 'Master advanced concepts for senior DevOps roles.',
+    skills: [
+      {
+        id: 'service-mesh',
+        name: 'Service Mesh (Istio)',
+        description: 'Microservices communication and security layer',
+        difficulty: 'Advanced',
+        icon: Network,
+        keyPoints: [
+          'Service mesh architecture and benefits',
+          'Istio installation and configuration',
+          'Traffic management and routing rules',
+          'Security policies and mTLS',
+          'Observability and distributed tracing',
+          'Rate limiting and circuit breaking',
+          'Canary deployments and A/B testing',
+          'Multi-cluster service mesh setup'
+        ],
+        resources: [
+          {
+            title: 'Istio Official Documentation',
+            type: 'article',
+            url: 'https://istio.io/latest/docs/'
+          },
+          {
+            title: 'Istio: Up and Running',
+            type: 'book',
+            url: 'https://www.oreilly.com/library/view/istio-up-and/9781492043775/'
+          },
+          {
+            title: 'Service Mesh Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=16fgzklcF7Y'
+          }
+        ]
+      },
+      {
+        id: 'gitops',
+        name: 'GitOps',
+        description: 'Git-based continuous deployment and operations',
+        difficulty: 'Advanced',
+        icon: GitBranch,
+        keyPoints: [
+          'GitOps principles and workflows',
+          'ArgoCD installation and configuration',
+          'Application deployment automation',
+          'Multi-environment management',
+          'Configuration drift detection',
+          'Rollback and disaster recovery',
+          'RBAC and security in GitOps',
+          'Progressive delivery patterns'
+        ],
+        resources: [
+          {
+            title: 'ArgoCD Documentation',
+            type: 'article',
+            url: 'https://argo-cd.readthedocs.io/'
+          },
+          {
+            title: 'GitOps and Kubernetes',
+            type: 'book',
+            url: 'https://www.manning.com/books/gitops-and-kubernetes'
+          },
+          {
+            title: 'GitOps Tutorial with ArgoCD',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=MeU5_k9ssrs'
+          }
+        ]
+      },
+      {
+        id: 'chaos-engineering',
+        name: 'Chaos Engineering',
+        description: 'Building resilient systems through controlled failures',
+        difficulty: 'Advanced',
+        icon: Zap,
+        keyPoints: [
+          'Chaos engineering principles and benefits',
+          'Chaos Monkey and Netflix chaos tools',
+          'Litmus for Kubernetes chaos experiments',
+          'Failure injection and blast radius control',
+          'Monitoring and observability during chaos',
+          'Building confidence through experimentation',
+          'Incident response and learning culture',
+          'GameDays and disaster recovery testing'
+        ],
+        resources: [
+          {
+            title: 'Chaos Engineering',
+            type: 'book',
+            url: 'https://www.oreilly.com/library/view/chaos-engineering/9781491988459/'
+          },
+          {
+            title: 'Principles of Chaos Engineering',
+            type: 'article',
+            url: 'https://principlesofchaos.org/'
+          },
+          {
+            title: 'Chaos Engineering Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=4LiJzWX-4bA'
+          },
+          {
+            title: 'LitmusChaos Documentation',
+            type: 'article',
+            url: 'https://docs.litmuschaos.io/'
+          }
+        ]
+      },
+      {
+        id: 'serverless',
+        name: 'Serverless Architecture',
+        description: 'Function-as-a-Service and serverless deployment patterns',
+        difficulty: 'Advanced',
+        icon: Cloud,
+        keyPoints: [
+          'Serverless architecture patterns and benefits',
+          'AWS Lambda, Azure Functions, Google Cloud Functions',
+          'Event-driven architecture and triggers',
+          'Cold starts and performance optimization',
+          'Serverless monitoring and debugging',
+          'Cost optimization strategies',
+          'Serverless security best practices',
+          'Framework tools (Serverless, SAM, CDK)'
+        ],
+        resources: [
+          {
+            title: 'Serverless Architectures on AWS',
+            type: 'book',
+            url: 'https://www.manning.com/books/serverless-architectures-on-aws-second-edition'
+          },
+          {
+            title: 'AWS Lambda Documentation',
+            type: 'article',
+            url: 'https://docs.aws.amazon.com/lambda/'
+          },
+          {
+            title: 'Serverless Tutorial',
+            type: 'video',
+            url: 'https://www.youtube.com/watch?v=71cd5XerKss'
+          },
+          {
+            title: 'Serverless Framework Guide',
+            type: 'course',
+            url: 'https://www.serverless.com/framework/docs'
           }
         ]
       }
