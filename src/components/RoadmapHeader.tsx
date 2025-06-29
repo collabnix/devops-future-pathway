@@ -16,6 +16,7 @@ export const RoadmapHeader = () => {
     { path: '/community', label: 'Community' },
     { path: '/blog', label: 'Blog' },
     { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -35,7 +36,7 @@ export const RoadmapHeader = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -53,7 +54,7 @@ export const RoadmapHeader = () => {
               href="https://github.com/collabnix/devops-future-pathway" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors ml-2"
             >
               <Github className="w-4 h-4" />
               <span>GitHub</span>
