@@ -113,9 +113,11 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="flex items-center">
-              Start Learning
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" className="flex items-center" asChild>
+              <Link to="/roadmaps">
+                Start Learning
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link to="/community" className="flex items-center">
@@ -224,9 +226,9 @@ const Index = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/community" className="flex items-center">
-                <Star className="w-5 h-5 mr-2" />
-                Join 10k+ Members
+              <Link to="/roadmaps" className="flex items-center">
+                <Target className="h-5 w-5 mr-2" />
+                Explore Roadmaps
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
